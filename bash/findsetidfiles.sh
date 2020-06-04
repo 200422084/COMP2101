@@ -22,9 +22,12 @@
 echo "Setuid files:"
 echo "============="
 sudo find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
+# using echo commands to dispaly the heading
 echo " Setgid files"
 echo "============="
+# using the find command to search for regualr files with setgid bit.
 sudo find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 4
+#using echo command to display the heading for the kargest files.
 echo "10 largest files"
 echo "================="
 sudo find / -type f -exec ls -Slh {} + 2>/dev/null | head -10 |awk '{print $3,$5,$9}'
