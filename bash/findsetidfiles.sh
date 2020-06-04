@@ -27,4 +27,4 @@ echo "============="
 sudo find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 4
 echo "10 largest files"
 echo "================="
-sudo find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -n -r -k 7 | head -10 | awk '{print $5,$7,$11}'
+sudo find / -type f -exec ls -Slh {} + 2>/dev/null | head -10 |awk '{print $3,$5,$9}'
