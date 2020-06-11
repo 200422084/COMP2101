@@ -30,10 +30,4 @@ test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz https://zonzorp.ne
 
 #This command is used to extract the content from of a tarfile.First it checks if the file named pics.tgz is their .
 #if its their then the command will extarct the content and will then delete the copy of the zipfile.
-test -f ~/Pictures/pics.tgz && tar -d ~/Pictures zxf ~/Pictures/pics.tgz && rm ~/Pictures/pics.tgz
-
-# displaying a report on what is in the picture directory.
-test -d ~/Pictures && cat <<EOF
-Found $(find ~/Pictures -type f|wc -l) files in the Pictures directory.
-The Pictures directory uses $(du -sh ~/Pictures|awk '{print $1}') space on the disk.
-EOF
+test -f ~/Pictures/pics.tgz && tar zxf ~/Pictures/pics.tgz && rm ~/Pictures/pics.tgz
