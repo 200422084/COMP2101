@@ -30,4 +30,4 @@ test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz https://zonzorp.ne
 
 #This command is used to extract the content from of a tarfile.First it checks if the file named pics.tgz is their .
 #if its their then the command will extarct the content and will then delete the copy of the zipfile.
-test -f ~/Pictures/pics.tgz && tar zxf ~/Pictures/pics.tgz && rm ~/Pictures/pics.tgz
+test -f ~/Pictures/pics.tgz && tar zxf ~/Pictures/pics.tgz -C ~/Pictures && rm ~/Pictures/pics.tgz
