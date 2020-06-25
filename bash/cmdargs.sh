@@ -53,8 +53,3 @@ done
 echo "The content in Array is"
 echo "${myargs[@]}"
 echo "Done"
-
-# TASK2: display the settings and myargs contents
-#         Tell the user if vebose mode is on
-#         Tell the user if debug mode is on and if it is, what number it is set to
-#         Print out the myargs array with a label
