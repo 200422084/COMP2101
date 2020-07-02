@@ -32,4 +32,4 @@ echo "10 largest files"
 echo "================="
 #using the find comand to find all regular files and then they are listed based on their size in human friendly manner.
 #the head command is to display only the first 10 lines and the awk command is to print onlu the username, file size abd the file name.
-sudo find / -type f -exec ls -Slh {} + 2>/dev/null | head -10 |awk '{print $3,$5,$9}'
+sudo find / -type f -exec ls -l --block-size=MB {} + 2>/dev/null | sort -k 5 -nr | head -10 |awk '{print $3,$5,$9}'
