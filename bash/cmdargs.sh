@@ -30,8 +30,9 @@ while [ $# -gt 0 ]; do
        fi
        shift
       ;;
+    esac
 # for all the other cases the argument will get stored to the array.
-      * )
+
    # tell the user how many things are left on the command line
    echo "There are $# things left to process on the command line."
    # add whatever is in $1 to the myargs array
@@ -44,8 +45,8 @@ while [ $# -gt 0 ]; do
   # tell the user we shifted things
   echo "Shifted command line, leaving $# things left to process."
   echo "--------------------------"
-  ;;
-esac
+
+
   # go back to the top of the loop to see if anything is left to work on
 done
 #command to print out the content in the array
