@@ -17,7 +17,7 @@ while [ $# -gt 0 ]; do
     -v )
     verboseMode="ON"
     echo "-v for verbose and is $verboseMode"
-    exit
+    shift
       ;;
       #command to check if the first argument is -d and the if the condition check if there is a number after -d that indicates the
       #the level. if there is a argument then a message with debug level will display else an error message will get displayed.
@@ -26,8 +26,9 @@ while [ $# -gt 0 ]; do
          echo "The debug mode is on and the level is $2"
        else
          echo "ERROR, The debug mode was given without a level"
+         exit
        fi
-       exit
+       shift
       ;;
 # for all the other cases the argument will get stored to the array.
       * )
@@ -37,8 +38,6 @@ while [ $# -gt 0 ]; do
    myargs+=("$1")
    # tell the user what we did
    echo "Added \'$1\' to the arguments array"
-
-
   # each time through the loop, shift the arguments left
   # this decrements the argument count for us
   shift
