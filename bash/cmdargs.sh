@@ -4,6 +4,7 @@
 # create an empty array to put the command line arguments into
 myargs=()
 verboseMode="off"
+debuggMode="off"
 # loop through the command line arguments
 while [ $# -gt 0 ]; do
   ######################## Task 1 Answer##################################
@@ -23,7 +24,8 @@ while [ $# -gt 0 ]; do
       #the level. if there is a argument then a message with debug level will display else an error message will get displayed.
       -d )
        if [[ "$2" != "" ]]; then
-         echo "The debug mode is on and the level is $2"
+         debuggMode="ON"
+         echo "The debug mode is $debuggMode and the level is $2"
        else
          echo "ERROR, The debug mode was given without a level"
          exit
